@@ -33,10 +33,6 @@
 </head>
 <body class="item-page">
     <div class="container item-container">
-        <a href="index.html" class="back-button">
-            <span>‹</span> Back to List
-        </a>
-
         <div id="itemContent"></div>
     </div>
 
@@ -148,6 +144,9 @@
                     </div>
                 </div>
             `;
+
+            // Update page title to be unique per item
+            document.title = `${item.name} - Price Details`;
         }
 
         // Initialize
