@@ -51,8 +51,8 @@
                 <input type="text" id="itemName" placeholder="e.g., MacBook Pro 14-inch">
             </div>
             <div class="form-group">
-                <label for="itemIcon">Icon</label>
-                <input type="text" id="itemIcon" placeholder="e.g., 💻, 📱, 🖥️" maxlength="2">
+                <label for="itemIcon">Icon (Emoji or Image URL)</label>
+                <input type="text" id="itemIcon" placeholder="e.g., 💻 or https://example.com/icon.png">
             </div>
             <div class="form-group">
                 <label for="itemPrice">Price in PHP (₱)</label>
@@ -132,6 +132,15 @@
         // Convert PHP to USD
         function convertToUSD(phpAmount) {
             return (phpAmount * exchangeRate).toFixed(2);
+        }
+
+        // Render icon (emoji or image)
+        function renderIcon(icon) {
+            if (!icon) return '📦';
+            if (icon.startsWith('http')) {
+                return `<img src="${icon}" alt="icon" class="item-icon-small" onerror="this.style.display='none'">`;
+            }
+            return icon;
         }
 
         // Add or update item
@@ -231,7 +240,7 @@
             container.innerHTML = items.map(item => `
                 <a href="item.html?id=${item.id}" class="item-card">
                     <div class="item-info">
-                        <div class="item-name">${item.icon || '📦'} ${item.name}</div>
+                        <div class="item-name">${renderIcon(item.icon)} ${item.name}</div>
                         <div class="item-prices">
                             <span class="price-php">₱${item.price.toLocaleString('en-PH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                             <span class="price-usd">≈ $${convertToUSD(item.price)} USD</span>

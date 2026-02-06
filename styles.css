@@ -189,6 +189,16 @@ button {
     font-weight: 500;
     margin-bottom: 4px;
     word-break: break-word;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-icon-small {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .item-prices {
@@ -290,6 +300,12 @@ body.item-page {
 .item-icon {
     font-size: 64px;
     margin-bottom: 24px;
+}
+
+.item-icon-large {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
 }
 
 body.item-page h1 {

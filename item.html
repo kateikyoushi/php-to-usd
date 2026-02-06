@@ -81,6 +81,15 @@
             return (phpAmount * exchangeRate).toFixed(2);
         }
 
+        // Render icon (emoji or image)
+        function renderIcon(icon) {
+            if (!icon) return '📦';
+            if (icon.startsWith('http')) {
+                return `<img src="${icon}" alt="icon" class="item-icon-large" onerror="this.style.display='none'">`;
+            }
+            return icon;
+        }
+
         // Render item details
         async function renderItemDetails() {
             const container = document.getElementById('itemContent');
@@ -124,7 +133,7 @@
             // Render item
             container.innerHTML = `
                 <div class="item-detail-card">
-                    <div class="item-icon">${item.icon || '📦'}</div>
+                    <div class="item-icon">${renderIcon(item.icon)}</div>
                     <h1>${item.name}</h1>
                     
                     <div class="price-section">
