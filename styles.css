@@ -279,23 +279,6 @@ body.item-page {
     max-width: 600px;
 }
 
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 15px;
-    margin-bottom: 24px;
-    transition: color 0.2s;
-}
-
-.back-button:hover, .back-button:focus {
-    color: var(--accent-hover);
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-}
-
 .item-detail-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
