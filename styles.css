@@ -320,6 +320,7 @@ body.item-page h1 {
 
 .price-section {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 32px;
 }
@@ -441,6 +442,7 @@ body.item-page h1 {
 
     .price-section {
         gap: 16px;
+        grid-template-columns: 1fr;
     }
 
     .price-box {
